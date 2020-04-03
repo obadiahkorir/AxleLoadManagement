@@ -1,0 +1,9 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="Axle_Load_Control.Properties" GeneratedClassName="Settings">
+  <Profiles />
+  <Settings>
+    <Setting Name="Axle_Load_Control_AxleCodeunit_AxleLoadCodeunit" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">http://obadiah:7047/BC140/WS/KeRRA/Codeunit/AxleLoadCodeunit</Value>
+    </Setting>
+  </Settings>
+</SettingsFile>

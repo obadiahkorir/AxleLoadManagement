@@ -1,0 +1,82 @@
+﻿
+@{
+    ViewBag.Title = "BillBoards";
+}
+
+<div class="page-wrapper">
+    <div class="content container-fluid">
+            <div class="row">
+                <div class="col-sm-6">
+                    <div class="form-group">
+                        <label class="control-label">Application No: <span class="text-danger">*</span></label>
+                        <input class="form-control" type="text">
+                    </div>
+                </div>
+                <div class="col-sm-6">
+                    <div class="form-group">
+                        <label class="control-label">Region:<span class="text-danger">*</span></label>
+                        <input class="form-control" type="text">
+                    </div>
+                </div>
+                <div class="col-sm-6">
+                    <div class="form-group">
+                        <label class="control-label">Lenght:<span class="text-danger">*</span></label>
+                        <input class="form-control" type="text">
+                    </div>
+                </div>
+                <div class="col-sm-6">
+                    <div class="form-group">
+                        <label class="control-label">Width:<span class="text-danger">*</span></label>
+                        <input class="form-control" type="text">
+                    </div>
+                </div>
+                <div class="col-sm-6">
+                    <div class="form-group">
+                        <label class="control-label">Town:<span class="text-danger">*</span></label>
+                        <input class="form-control" type="text">
+                    </div>
+                </div>
+                <div class="col-sm-6">
+                    <div class="form-group">
+                        <label class="control-label">Coordinates:<span class="text-danger">*</span></label>
+                        <input class="form-control" type="text">
+                    </div>
+                </div>
+                <div class="col-sm-6">
+                    <div class="form-group">
+                        <label class="control-label">Road Number<span class="text-danger">*</span></label>
+                        <input class="form-control" type="text">
+                    </div>
+                </div>
+                <div class="col-sm-6">
+                    <div class="form-group">
+                        <label class="control-label">Road Name<span class="text-danger">*</span></label>
+                        <div class="cal-icon"><input class="form-control" type="text"></div>
+                    </div>
+                </div>
+             
+                </div>
+            </div>
+            <div class="m-t-20 text-center">
+                <button class="btn btn-primary">Submit Application</button>
+            </div>
+    </div>
+<div id="delete_employee" class="modal custom-modal " role="dialog">
+    <div class="modal-dialog">
+        <div class="modal-content modal-md">
+            <div class="modal-header">
+                <h4 class="modal-title">Delete Employee</h4>
+            </div>
+            <form>
+                <div class="modal-body card-box">
+                    <p>Are you sure want to delete this?</p>
+                    <div class="m-t-20">
+                        <a href="#" class="btn btn-default" data-dismiss="modal">Close</a>
+                        <button type="submit" class="btn btn-danger">Delete</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+

@@ -1,0 +1,121 @@
+﻿
+@{
+    ViewBag.Title = "AccesssRoad";
+}
+<div class="page-wrapper">
+    <div class="content container-fluid">
+        <form class="m-b-30">
+            <div class="row">
+                <div style="background-color:lightslategray">
+                    <center>
+                        <h1>Access Road Application Details</h1>
+                    </center>
+                </div>
+                <div class="col-sm-6">
+                    <div class="form-group">
+                        <label class="control-label">Application No: <span class="text-danger">*</span></label>
+                        <input class="form-control" type="text">
+                    </div>
+                </div>
+                <div class="col-sm-6">
+                    <div class="form-group">
+                        <label class="control-label">Applicant Name<span class="text-danger">*</span></label>
+                        <input class="form-control" type="text">
+                    </div>
+                </div>
+                <div class="col-sm-6">
+                    <div class="form-group">
+                        <label class="control-label">Location<span class="text-danger">*</span></label>
+                        <input class="form-control" type="text">
+                    </div>
+                </div>
+                <div class="col-sm-6">
+                    <div class="form-group">
+                        <label class="control-label">Select Road<span class="text-danger">*</span></label>
+                        <input class="form-control" type="text">
+                    </div>
+                </div>
+                <div class="col-sm-6">
+                    <div class="form-group">
+                        <label class="control-label">Coordinates<span class="text-danger">*</span></label>
+                        <input class="form-control" type="text">
+                    </div>
+                </div>
+                <div class="col-sm-6">
+                    <div class="form-group">
+                        <label class="control-label">Plot LR Number</label>
+                        <input class="form-control" type="text">
+                    </div>
+                </div>
+                <div class="col-sm-6">
+                    <div class="form-group">
+                        <label class="control-label">Work Description</label>
+                        <input class="form-control" type="text">
+                    </div>
+                </div>
+                <div class="col-sm-6">
+                    <div class="form-group">
+                        <label class="control-label">Access Road Reason</label>
+                        <select class="form-control" id="reason" name="reason">
+                            <option value="">--SELECT TYPE--</option>
+                            <option value="">Accelleration/Deceleration</option>
+                            <option value="">Road Repair</option>
+                            <option value="">Culvert Construction</option>
+                            <option value="">Culvert Extension</option>
+                            <option value="">Congrete Lined Drains</option>
+                            <option value="">Earth Side Drain Shapping</option>
+                            <option value="">Road Marking Signs</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="col-sm-6">
+                    <div class="form-group">
+                        <label class="control-label">Certified Copy of Title Deed<span class="text-danger">*</span></label>
+                        <input class="form-control" type="file">
+                    </div>
+                </div>
+                <div class="col-sm-6">
+                    <div class="form-group">
+                        <label class="control-label">Survey Plan from Survey of Kenya<span class="text-danger">*</span></label>
+                        <input class="form-control" type="file">
+                    </div>
+                </div>
+                <div class="col-sm-6">
+                    <div class="form-group">
+                        <label class="control-label">Detailed Engineering Design<span class="text-danger">*</span></label>
+                        <input class="form-control" type="file">
+                    </div>
+                </div>
+                <div class="col-sm-6">
+                    <div class="form-group">
+                        <label class="control-label">Layout Plan (Geo Refenced)<span class="text-danger">*</span></label>
+                        <input class="form-control" type="file">
+                    </div>
+                </div>
+            </div>
+            <div class="m-t-20 text-center">
+                <button class="btn btn-primary">Submit Application</button>
+            </div>
+    </div>
+    
+</div>
+<div id="delete_employee" class="modal custom-modal " role="dialog">
+    <div class="modal-dialog">
+        <div class="modal-content modal-md">
+            <div class="modal-header">
+                <h4 class="modal-title">Delete Employee</h4>
+            </div>
+            <form>
+                <div class="modal-body card-box">
+                    <p>Are you sure want to delete this?</p>
+                    <div class="m-t-20">
+                        <a href="#" class="btn btn-default" data-dismiss="modal">Close</a>
+                        <button type="submit" class="btn btn-danger">Delete</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+

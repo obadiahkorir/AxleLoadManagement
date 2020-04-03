@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<definitions xmlns:tns="urn:microsoft-dynamics-schemas/codeunit/AxleLoadCodeunit" targetNamespace="urn:microsoft-dynamics-schemas/codeunit/AxleLoadCodeunit" xmlns="http://schemas.xmlsoap.org/wsdl/">
+  <types>
+    <schema elementFormDefault="qualified" targetNamespace="urn:microsoft-dynamics-schemas/codeunit/AxleLoadCodeunit" xmlns="http://www.w3.org/2001/XMLSchema" />
+  </types>
+  <portType name="AxleLoadCodeunit_Port" />
+  <binding name="AxleLoadCodeunit_Binding" type="tns:AxleLoadCodeunit_Port">
+    <binding transport="http://schemas.xmlsoap.org/soap/http" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+  </binding>
+  <service name="AxleLoadCodeunit">
+    <port name="AxleLoadCodeunit_Port" binding="tns:AxleLoadCodeunit_Binding">
+      <address location="http://obadiah:7047/BC140/WS/KeRRA/Codeunit/AxleLoadCodeunit" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+    </port>
+  </service>
+</definitions>

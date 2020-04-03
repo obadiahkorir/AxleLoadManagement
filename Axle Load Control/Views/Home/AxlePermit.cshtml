@@ -1,0 +1,376 @@
+﻿@model Axle_Load_Control.Models.AxlePermitViewModel
+@{
+    ViewBag.Title = "AxlePermit";
+}
+@using (Html.BeginForm("AxlePermit", "Home", FormMethod.Post, new { enctype = "multipart/form-data" }))
+{
+    @Html.AntiForgeryToken()
+    <div class="page-wrapper">
+        <div class="content container-fluid">
+            <form class="m-b-30">
+                <div class="row">
+                    <div style="background-color:lightslategray">
+                        <center>
+                            <h1>Axle Load Permit Application Details</h1>
+                        </center>
+                    </div>
+                    <div class="col-sm-6">
+                        <div class="form-group">
+                            <label class="control-label">Applicant Name <span class="text-danger">*</span></label>
+                            @Html.EditorFor(model => model.applicantname, new { htmlAttributes = new { @class = "form-control floating", @required = "required", placeholder = "Appplicant Name" } })
+                        </div>
+                    </div>
+                    @*<div class="col-sm-6">
+                        <div class="form-group">
+                            <label class="control-label">Region</label>
+                            <select class="form-control chosen" id="region" name="region">
+                                <option value="">--SELECT MAKE---</option>
+                                <option value="">Mombasa</option>
+                                <option value="">Kwale </option>
+                                <option value="">Kilifi</option>
+                                <option value="">Tana River</option>
+                                <option value="">Lamu</option>
+                                <option value="">Taita Taveta </option>
+                                <option value="">Garissa</option>
+                                <option value="">Wajir </option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="col-sm-6">
+                        <div class="form-group">
+                            <label class="control-label">Postal Address</label>
+                            <input class="form-control" type="text">
+                        </div>
+                    </div>
+                    <div class="col-sm-6">
+                        <div class="form-group">
+                            <label class="control-label">Vehicle Registration No.<span class="text-danger">*</span></label>
+                            <input class="form-control" type="text">
+                        </div>
+                    </div>
+                    <div class="col-sm-6">
+                        <div class="form-group">
+                            <label class="control-label">Vehicle Make <span class="text-danger">*</span></label>
+                            <select class="form-control chosen" id="vehiclemake" name="Vehicle Make">
+                                <option value="">--SELECT MAKE---</option>
+                                <option value="1">ABART</option>
+                                <option value="70">ACE</option>
+                                <option value="1087">ADMIRAL</option>
+                                <option value="2">ALFA ROMEO</option>
+                                <option value="57">AMW</option>
+                                <option value="41">ASHOK LEYLAND</option>
+                                <option value="72">ASTRA</option>
+                                <option value="3">AUDI</option>
+                                <option value="54">BEDFORD</option>
+                                <option value="45">BEIBEN</option>
+                                <option value="4">BMW</option>
+                                <option value="61">CAMC</option>
+                                <option value="1091">CHEVROLET</option>
+                                <option value="5">CHRYSLER JEEP</option>
+                                <option value="6">CITROEN </option>
+                                <option value="7">DACIA</option>
+                                <option value="39">DAF</option>
+                                <option value="79">DALIAN</option>
+                                <option value="52">DATSUN</option>
+                                <option value="59">DAYUN</option>
+                                <option value="55">DELCO</option>
+                                <option value="1086">DONGFENG</option>
+                                <option value="8">DS Automobiles</option>
+                                <option value="33">EICHER</option>
+                                <option value="71">ERF</option>
+                                <option value="56">ESCORTS</option>
+                                <option value="77">FAUN-JADANO</option>
+                                <option value="37">FAW</option>
+                                <option value="9">FIAT</option>
+                                <option value="10">FORD</option>
+                                <option value="36">FOTON</option>
+                                <option value="1085">Freightliner</option>
+                                <option value="44">FUSO</option>
+                                <option value="60">GREATWALL</option>
+                                <option value="62">GROVE-GRANE</option>
+                                <option value="47">HINO</option>
+                                <option value="11">HONDA</option>
+                                <option value="1084">HONGYANG</option>
+                                <option value="75">HOWO</option>
+                                <option value="12">HYUNDAI</option>
+                                <option value="32">ISUZU</option>
+                                <option value="53">IVECO</option>
+                                <option value="73">JAC</option>
+                                <option value="1088">JAC</option>
+                                <option value="50">KAMA</option>
+                                <option value="67">KATO</option>
+                                <option value="1083">Kenworth </option>
+                                <option value="13">KIA </option>
+                                <option value="83">KRUPP</option>
+                                <option value="64">Land Rover-Pick Up</option>
+                                <option value="68">LIEBHER</option>
+                                <option value="81">LOCATELLI</option>
+                                <option value="69">MACK</option>
+                                <option value="74">MAGURUS DEUTZ</option>
+                                <option value="43">MAHINDRA</option>
+                                <option value="34">MAN</option>
+                                <option value="14">MAZDA </option>
+                                <option value="15">MERCEDES </option>
+                                <option value="16">MERCEDES </option>
+                                <option value="17">MG </option>
+                                <option value="18">MINI</option>
+                                <option value="19">MITSUBISHI</option>
+                                <option value="20">NISSAN </option>
+                                <option value="21">PEUGEOT </option>
+                                <option value="1090">POW STAR</option>
+                                <option value="1089">POWERSTAR</option>
+                                <option value="22">RENAULT </option>
+                                <option value="46">SANY</option>
+                                <option value="51">SCAMMEL LEYLAND</option>
+                                <option value="35">SCANIA</option>
+                                <option value="80">SCHRAMM</option>
+                                <option value="23">SEAT </option>
+                                <option value="76">SHAANQI</option>
+                                <option value="38">SHACMAN</option>
+                                <option value="49">SINO TRUCK</option>
+                                <option value="24">SKODA</option>
+                                <option value="25">SMART</option>
+                                <option value="78">STEYR</option>
+                                <option value="82">SUBARU SAMBAR</option>
+                                <option value="26">SUZUKI</option>
+                                <option value="66">TADANO</option>
+                                <option value="42">TATA</option>
+                                <option value="27">TOYOTA</option>
+                                <option value="28">VAUXHALL</option>
+                                <option value="29">Volkswagen </option>
+                                <option value="30">VOLVO</option>
+                                <option value="40">XCMG</option>
+                                <option value="63">XMCG</option>
+                                <option value="48">XUGONG</option>
+                                <option value="65">YUE-JIN VAN</option>
+                                <option value="58">Zoomlion Cranes</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="col-sm-6">
+                        <div class="form-group">
+                            <label class="control-label">Vehicle Type</label>
+                            <select class="form-control" id="VehicleType" name="VehicleType">
+                                <option value="">--SELECT TYPE--</option>
+                                <option value="15">Bulk Cement Carrier</option>
+                                <option value="4">Car Carrier</option>
+                                <option value="12">Concrete Pump/ Ready Mix </option>
+                                <option value="2">Cranes</option>
+                                <option value="3">Double Steering</option>
+                                <option value="13">Double Steering can one equipment</option>
+                                <option value="14">Double Steering carrying several equipment</option>
+                                <option value="1">Drilling Rigs/ Test Pumping Unit</option>
+                                <option value="18">Flowers Carrier</option>
+                                <option value="5">Lorries</option>
+                                <option value="16">Mobile Compressor Truck</option>
+                                <option value="6">Pickup</option>
+                                <option value="10">Prime Mover (Carrying Assorted Goods)</option>
+                                <option value="8">Prime Mover (Carrying One Equipment/Load)</option>
+                                <option value="9">Prime Mover (Carrying Several  Equipments/Loads)</option>
+                                <option value="11">Special Sugarcane Trailer </option>
+                                <option value="17">Tobacco Trailer</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="col-sm-6">
+                        <div class="form-group">
+                            <label class="control-label">Trailer Registration</label>
+                            <input class="form-control" type="password">
+                        </div>
+                    </div>
+                    <div class="col-sm-6">
+                        <div class="form-group">
+                            <label class="control-label">Total No. of Axle <span class="text-danger">*</span></label>
+                            <select class="form-control chosen" id="Axles" name="Axles">
+                                <option value="">--SELECT AXLES---</option>
+                                <option value="2">2</option>
+                                <option value="3">3</option>
+                                <option value="4">4</option>
+                                <option value="5">5</option>
+                                <option value="6">6</option>
+                                <option value="7">7</option>
+                                <option value="8">8</option>
+                                <option value="9">9</option>
+                                <option value="10">10</option>
+                                <option value="11">11</option>
+                                <option value="12">12</option>
+                                <option value="13">13</option>
+                                <option value="14">14</option>
+                                <option value="15">15</option>
+                                <option value="16">16</option>
+                                <option value="17">17</option>
+                                <option value="18">18</option>
+                                <option value="19">19</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="col-sm-6">
+                        <div class="form-group">
+                            <label class="control-label">No. of Wheels Per Axle <span class="text-danger">*</span></label>
+                            <input class="form-control" type="text">
+                        </div>
+                    </div>
+                    <div class="col-sm-6">
+                        <div class="form-group">
+                            <label class="control-label">Tare Weight(Vehicle Kg)</label>
+                            <input class="form-control" type="text">
+                        </div>
+                    </div>
+                    <div class="col-sm-6">
+                        <div class="form-group">
+                            <label class="control-label">Weight of Cargo(Kg)</label>
+                            <input class="form-control" type="text">
+                        </div>
+                    </div>
+                    <div class="col-sm-6">
+                        <div class="form-group">
+                            <label class="control-label">Gross Vehicle Weight(Kg)</label>
+                            <input class="form-control" type="text">
+                        </div>
+                    </div>
+                    <div class="col-sm-6">
+                        <div class="form-group">
+                            <label class="control-label">Trailer Registration No.</label>
+                            <input class="form-control" type="text">
+                        </div>
+                    </div>
+                    <div class="col-sm-6">
+                        <div class="form-group">
+                            <label class="control-label">Tare Weight(Trailer Kg)</label>
+                            <input class="form-control" type="text">
+                        </div>
+                    </div>
+                    <div class="col-sm-6">
+                        <div class="form-group">
+                            <label class="control-label">Tare Weight(V+T Kg)</label>
+                            <input class="form-control" type="text">
+                        </div>
+                    </div>
+                    <div class="col-sm-6">
+                        <div class="form-group">
+                            <label class="control-label">From Date</label>
+                            <div class="cal-icon"><input class="form-control datetimepicker" type="text"></div>
+                        </div>
+                    </div>
+                    <div class="col-sm-6">
+                        <div class="form-group">
+                            <label class="control-label">To Date</label>
+                            <div class="cal-icon"><input class="form-control datetimepicker" type="text"></div>
+                        </div>
+                    </div>
+                    <div class="col-sm-6">
+                        <div class="form-group">
+                            <label class="control-label">Route</label>
+                            <input class="form-control" type="text">
+                        </div>
+                    </div>
+                    <div class="col-sm-6">
+                        <div class="form-group">
+                            <label class="control-label">Weighbridge Checkpoint</label>
+                            <select class="form-control" id="WeighBridgeID" name="WeighBridgeID">
+                                <option value="">--SELECT--</option>
+                                <option value="1">Nairobi</option>
+                                <option value="2">Malindi</option>
+                                <option value="3">Athi River</option>
+                                <option value="4">Machakos</option>
+                                <option value="5">Juja</option>
+                                <option value="6">Gilgil</option>
+                                <option value="7">Webuye</option>
+                                <option value="11">Isebania</option>
+                                <option value="12">Maai Mahiu</option>
+                                <option value="13">Busia</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="col-sm-6">
+                        <div class="form-group">
+                            <label class="control-label">Description of Load</label>
+                            <input class="form-control" type="text">
+                        </div>
+                    </div>
+                    <div class="col-sm-6">
+                        <div class="form-group">
+                            <label class="control-label"> Copy Of Vehicle Log Book</label>
+                            <input class="form-control" type="file">
+                        </div>
+                    </div>
+                    <div class="col-sm-6">
+                        <div class="form-group">
+                            <label class="control-label"> Copy of Vehicle Inspection Certificate</label>
+                            <input class="form-control" type="file">
+                        </div>
+                    </div>
+                    <div class="col-sm-6">
+                        <div class="form-group">
+                            <label class="control-label"> Copy of Trailer Log Book</label>
+                            <input class="form-control" type="file">
+                        </div>
+                    </div>
+                    <div class="col-sm-6">
+                        <div class="form-group">
+                            <label class="control-label"> Copy of Trailer Inspection Certificate</label>
+                            <input class="form-control" type="file">
+                        </div>
+                    </div>
+                    <div class="col-sm-6">
+                        <div class="form-group">
+                            <label class="control-label"> Copy of Vehcile Insurance Certificate</label>
+                            <input class="form-control" type="file">
+                        </div>
+                    </div>
+                    <div class="col-sm-6">
+                        <div class="form-group">
+                            <label class="control-label"> Copy of Trailer Insurance Certificate</label>
+                            <input class="form-control" type="file">
+                        </div>
+                    </div>
+                    <div class="col-sm-6">
+                        <div class="form-group">
+                            <label class="control-label"> Copy of Details of Cargo to be Carried</label>
+                            <input class="form-control" type="file">
+                        </div>
+                    </div>
+                    <div class="col-sm-6">
+                        <div class="form-group">
+                            <label class="control-label">Scanned Photo of Vehicle When Loaded (Front)</label>
+                            <input class="form-control" type="file">
+                        </div>
+                    </div>
+                    <div class="col-sm-6">
+                        <div class="form-group">
+                            <label class="control-label">Scanned Photo of Vehicle When Loaded (Front)</label>
+                            <input class="form-control" type="file">
+                        </div>
+                    </div>
+                    <div class="col-sm-6">
+                        <div class="form-group">
+                            <label class="control-label">Scanned Photo of Vehicle When Loaded (Side)</label>
+                            <input class="form-control" type="file">
+                        </div>
+                    </div>*@
+                </div>
+                <div class="m-t-20 text-center">
+                    <button class="btn btn-primary">Submit Application</button>
+                </div>
+            </form>
+            
+        </div>
+    </div>
+    <div id="delete_employee" class="modal custom-modal " role="dialog">
+        <div class="modal-dialog">
+            <div class="modal-content modal-md">
+                <div class="modal-header">
+                    <h4 class="modal-title">Delete Employee</h4>
+                </div>
+                <form>
+                    <div class="modal-body card-box">
+                        <p>Are you sure want to delete this?</p>
+                        <div class="m-t-20">
+                            <a href="#" class="btn btn-default" data-dismiss="modal">Close</a>
+                            <button type="submit" class="btn btn-danger">Delete</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>

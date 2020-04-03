@@ -1,0 +1,180 @@
+﻿
+@{
+    ViewBag.Title = "WayLeave";
+}
+<div class="page-wrapper">
+    <div class="content container-fluid">
+        <div class="row">
+            <div class="col-sm-6">
+                <div class="form-group">
+                    <label class="control-label">Application No: <span class="text-danger">*</span></label>
+                    <input class="form-control" type="text">
+                </div>
+            </div>
+            <div class="col-sm-6">
+                <div class="form-group">
+                    <label class="control-label">Region</label>
+                    <select class="form-control chosen" id="region" name="region">
+                        <option value="">--SELECT MAKE---</option>
+                        <option value="">Mombasa</option>
+                        <option value="">Kwale </option>
+                        <option value="">Kilifi</option>
+                        <option value="">Tana River</option>
+                        <option value="">Lamu</option>
+                        <option value="">Taita Taveta </option>
+                        <option value="">Garissa</option>
+                        <option value="">Wajir </option>
+                    </select>
+                </div>
+            </div>
+            <div class="col-sm-6">
+                <div class="form-group">
+                    <label class="control-label">Authorized Agent Name<span class="text-danger">*</span></label>
+                    <input class="form-control" type="text">
+                </div>
+            </div>
+            <div class="col-sm-6">
+                <div class="form-group">
+                    <label class="control-label">Authorized Agent Address<span class="text-danger">*</span></label>
+                    <input class="form-control" type="text">
+                </div>
+            </div>
+            <div class="col-sm-6">
+                <div class="form-group">
+                    <label class="control-label">Road Name</label>
+                    <select class="form-control" id="VehicleType" name="VehicleType">
+                        <option value="">--SELECT TYPE--</option>
+                        <option value="">Rironi-Wangige-Westlands</option>
+                        <option value="">Kamuguga-Kabete-Westlands</option>
+                        <option value="">Tigoni-Raini-Ruaka</option>
+                    </select>
+                </div>
+            </div>
+            <div class="col-sm-6">
+                <div class="form-group">
+                    <label class="control-label">Application Phase</label>
+                    <select class="form-control" id="applicationphase" name="applicationphase">
+                        <option value="">--SELECT TYPE--</option>
+                        <option value="">Service Inquiry</option>
+                        <option value="">Cross-Cut </option>
+                        <option value="">Wayleave</option>
+
+                    </select>
+                </div>
+            </div>
+            <div class="col-sm-6">
+                <div class="form-group">
+                    <label class="control-label">Application Reason</label>
+                    <select class="form-control" id="VehicleType" name="VehicleType">
+                        <option value="">Utilities Sewer</option>
+                        <option value="">Utilities GAS</option>
+                        <option value="">Utilities Electricity Underground</option>
+                        <option value="">Utilities Water</option>
+                        <option value="">Utilities Petrochemica</option>
+                        <option value="">Utilities Electronic Communication Network</option>
+                        <option value="">Utilities Electricity Overhead</option>
+                        <option value=""> Broadband Network Applications</option>
+                        <option value="">Township Development</option>
+                        <option value="">Signs Tourism</option>
+                        <option value="">Road markings for KeRRA Official Only</option>
+                        <option value="">Signs Advertising</option>
+                        <option value="">Road / Intersection Modification</option>
+                        <option value="">Residential Security Closure</option>
+                        <option value="">Residential Development / Redevelopment</option>
+                        <option value="">Re surfacing of Roads done by KeRRA</option>
+                        <option value="">Lane Rental / Using the Road Reserve</option>
+                        <option value="">Access Business Rights</option>
+                        <option value="">Access Filling Station</option>
+                        <option value="">Access Other Authority</option>
+                        <option value="">Commercial / Office Development</option>
+                        <option value="">Landscaping / Beautification of Road Reserve</option>
+                    </select>
+                </div>
+            </div>
+            <div class="col-sm-6">
+                <div class="form-group">
+                    <label class="control-label">Across the Road (Underground)</label>
+                    <input class="form-check-input"  type="checkbox">
+                </div>
+            </div>
+            <div class="col-sm-6">
+                <div class="form-group">
+                    <label class="control-label">Along the Road/Across (Overhead)<span class="text-danger">*</span></label>
+                    <input class="form-check-input"  type="checkbox">
+                </div>
+            </div>
+            <div class="col-sm-6">
+                <div class="form-group">
+                    <label class="control-label">Start Chainage<span class="text-danger">*</span></label>
+                    <input class="form-control" type="text">
+                </div>
+            </div>
+            <div class="col-sm-6">
+                <div class="form-group">
+                    <label class="control-label">End Chainage<span class="text-danger">*</span></label>
+                    <input class="form-control" type="text">
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-6">
+            <div class="form-group">
+                <label class="control-label">Start Coordinates<span class="text-danger">*</span></label>
+                <input class="form-control" type="text">
+            </div>
+        </div>
+        <div class="col-sm-6">
+            <div class="form-group">
+                <label class="control-label">End Coordinates<span class="text-danger">*</span></label>
+                <input class="form-control" type="text">
+            </div>
+        </div>
+        <div class="col-sm-6">
+            <div class="form-group">
+                <label class="control-label">No. of Lanes<span class="text-danger">*</span></label>
+                <input class="form-control" type="text">
+            </div>
+        </div>
+        <div class="col-sm-6">
+            <div class="form-group">
+                <label class="control-label">Layout Plan (Geo Refenced)<span class="text-danger">*</span></label>
+                <input type="file" name="file" id="file" />
+            </div>
+        </div>
+        <div class="col-sm-6">
+            <div class="form-group">
+                <label class="control-label">Detailed Engineering Design<span class="text-danger">*</span></label>
+                <input type="file" name="file" id="file" />
+            </div>
+        </div>
+        <div class="col-sm-6">
+            <div class="form-group">
+                <label class="control-label">List of Coordinates<span class="text-danger">*</span></label>
+                <input type="file" name="file" id="file" />
+            </div>
+        </div>
+        <div class="m-t-20 text-center">
+            <button class="btn btn-primary">Submit Application</button>
+        </div>
+    </div>
+</div>
+<div id="delete_employee" class="modal custom-modal " role="dialog">
+    <div class="modal-dialog">
+        <div class="modal-content modal-md">
+            <div class="modal-header">
+                <h4 class="modal-title">Delete WayLeave</h4>
+            </div>
+            <form>
+                <div class="modal-body card-box">
+                    <p>Are you sure want to delete this?</p>
+                    <div class="m-t-20">
+                        <a href="#" class="btn btn-default" data-dismiss="modal">Close</a>
+                        <button type="submit" class="btn btn-danger">Delete</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+
+

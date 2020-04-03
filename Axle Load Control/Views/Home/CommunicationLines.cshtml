@@ -1,0 +1,132 @@
+﻿
+@{
+    ViewBag.Title = "CommunicationLines";
+}
+<div class="page-wrapper">
+    <div class="content container-fluid">
+            <div class="row">
+                <div class="col-sm-6">
+                    <div class="form-group">
+                        <label class="control-label">Application No: <span class="text-danger">*</span></label>
+                        <input class="form-control" type="text">
+                    </div>
+                </div>
+                <div class="col-sm-6">
+                    <div class="form-group">
+                        <label class="control-label">Region</label>
+                        <input class="form-control" type="text">
+                    </div>
+                </div>
+                <div class="col-sm-6">
+                    <div class="form-group">
+                        <label class="control-label">Authorized Agent Name<span class="text-danger">*</span></label>
+                        <input class="form-control" type="text">
+                    </div>
+                </div>
+                <div class="col-sm-6">
+                    <div class="form-group">
+                        <label class="control-label">Authorized Agent Address<span class="text-danger">*</span></label>
+                        <select class="form-control chosen" id="vehiclemake" name="Vehicle Make">
+                            <option value="">--SELECT MAKE---</option>
+
+                        </select>
+                    </div>
+                </div>
+                <div class="col-sm-6">
+                    <div class="form-group">
+                        <label class="control-label">Road Name</label>
+                        <select class="form-control" id="VehicleType" name="VehicleType">
+                            <option value="">--SELECT TYPE--</option>
+
+                        </select>
+                    </div>
+                </div>
+                <div class="col-sm-6">
+                    <div class="form-group">
+                        <label class="control-label">Across the Road (Underground)</label>
+                        <input class="form-control" type="password">
+                    </div>
+                </div>
+                <div class="col-sm-6">
+                    <div class="form-group">
+                        <label class="control-label">Along the Road/Across (Overheadr<span class="text-danger">*</span></label>
+                        <select class="form-control chosen" id="Axles" name="Axles">
+                            <option value="">--SELECT AXLES---</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="col-sm-6">
+                    <div class="form-group">
+                        <label class="control-label">Start Chainage<span class="text-danger">*</span></label>
+                          <input class="form-control" type="text">
+                    </div>
+                </div>
+                <div class="col-sm-6">
+                    <div class="form-group">
+                        <label class="control-label">End Chainage<span class="text-danger">*</span></label>
+                        <input class="form-control" type="text">
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-6">
+                <div class="form-group">
+                    <label class="control-label">Start Coordinates<span class="text-danger">*</span></label>
+                    <div class="cal-icon"><input class="form-control " type="text"></div>
+                </div>
+            </div>
+            <div class="col-sm-6">
+                <div class="form-group">
+                    <label class="control-label">End Coordinates<span class="text-danger">*</span></label>
+                    <input class="form-control" type="text">
+                </div>
+            </div>
+            <div class="col-sm-6">
+                <div class="form-group">
+                    <label class="control-label">No. of Lanes<span class="text-danger">*</span></label>
+                    <input class="form-control" type="text">
+                </div>
+            </div>
+            <div class="col-sm-6">
+                <div class="form-group">
+                    <label class="control-label">Layout Plan (Geo Refenced)<span class="text-danger">*</span></label>
+                    <input type="file" name="file" id="file" />
+                </div>
+            </div>
+            <div class="col-sm-6">
+                <div class="form-group">
+                    <label class="control-label">Detailed Engineering Design<span class="text-danger">*</span></label>
+                   <input type="file" name="file" id="file" />
+                </div>
+            </div>
+            <div class="col-sm-6">
+                <div class="form-group">
+                    <label class="control-label">List of Coordinates<span class="text-danger">*</span></label>
+                    <input type="file" name="file" id="file" />
+                </div>
+            </div>
+    </div>
+    <div class="m-t-20 text-center">
+        <button class="btn btn-primary">Submit Application</button>
+    </div>
+</div>
+<div id="delete_employee" class="modal custom-modal " role="dialog">
+    <div class="modal-dialog">
+        <div class="modal-content modal-md">
+            <div class="modal-header">
+                <h4 class="modal-title">Delete Employee</h4>
+            </div>
+            <form>
+                <div class="modal-body card-box">
+                    <p>Are you sure want to delete this?</p>
+                    <div class="m-t-20">
+                        <a href="#" class="btn btn-default" data-dismiss="modal">Close</a>
+                        <button type="submit" class="btn btn-danger">Delete</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+

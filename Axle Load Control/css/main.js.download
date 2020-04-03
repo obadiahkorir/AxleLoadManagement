@@ -1,0 +1,184 @@
+function toggleLayer( whichLayer )
+	{
+  		var elem, vis;
+  		if( document.getElementById ) // this is the way the standards work
+    		elem = document.getElementById( whichLayer );
+  		else if( document.all ) // this is the way old msie versions work
+      		elem = document.all[whichLayer];
+  		else if( document.layers ) // this is the way nn4 works
+    		elem = document.layers[whichLayer];
+  			vis = elem.style;
+  		// if the style.display value is blank we try to figure it out here
+  		if(vis.display==''&&elem.offsetWidth!=undefined&&elem.offsetHeight!=undefined)
+    		vis.display = (elem.offsetWidth!=0&&elem.offsetHeight!=0)?'block':'none';
+  			vis.display = (vis.display==''||vis.display=='block')?'none':'block';
+}
+function Clicktoprint() { 
+             var disp_setting="toolbar=yes,location=no,directories=yes,menubar=yes,"; 
+             disp_setting+="scrollbars=yes,width=650, height=600, left=100, top=25"; 
+             var content_vlue = document.getElementById("content").innerHTML;  
+             var docprint=window.open("","",disp_setting); 
+             docprint.document.open(); 
+             docprint.document.write('<html><head><title>Communications Commission of Kenya</title>'); 
+             docprint.document.write('</head><body onLoad="self.print()"><center>');          
+             docprint.document.write(content_vlue);          
+             docprint.document.write('</center></body></html>'); 
+             docprint.document.close(); 
+             docprint.focus(); 
+}
+function mailpage() {
+             mail_str = "mailto:?subject=Check out this page: " + document.title;
+             mail_str += "&body=I thought you might be interested in: " + document.title;
+             mail_str += ". You can view it at: " + location.href;
+             location.href = mail_str;
+}
+function changePostType() {
+             var dropdownIndex = document.getElementById('accomm').selectedIndex;
+	     document.formaccomm.action = document.getElementById('accomm')[dropdownIndex].value;
+             document.formaccomm.method = 'post';
+	     document.formaccomm.submit();
+}
+function onChange(dropdown) {
+            var myindex  = dropdown.selectedIndex;
+            if(myindex  != "0"){
+                var SelValue = dropdown.options[myindex].value;
+                top.location.href = SelValue;    
+                return true;
+            }else{
+                return false;
+            }
+}
+function confirmDelete(){
+	var x = confirm("Are you sure you want to do delete this record?");
+	if (x){ 
+		return true;
+	}
+	else{ 
+		return false;
+	}
+}
+var _txtdisplay;
+function GetXmlHttpObject(handler)
+{
+ var objXMLHttp=null
+   
+   if (window.XMLHttpRequest)
+   {
+       objXMLHttp=new XMLHttpRequest()
+   }
+   else if (window.ActiveXObject)
+   {
+       objXMLHttp=new ActiveXObject("Microsoft.XMLHTTP")
+   }
+   return objXMLHttp
+ }
+
+function stateChanged()
+{
+   if (xmlHttp.readyState!=4)
+   {
+           document.getElementById(_txtdisplay).innerHTML="<img src='http://216.154.209.114:8080/opencms/system/modules/cck.go.ke.site/resources/images/loading.gif' /> <br />Processing...please wait";
+   }
+   if (xmlHttp.readyState==4 || xmlHttp.readyState=="complete")
+   {
+           document.getElementById(_txtdisplay).innerHTML= xmlHttp.responseText;
+   }
+   else {
+           //alert(xmlHttp.status);
+   }
+}
+
+// Will populate data based on input
+function callAjax(url, qry, txtdisplay)
+{
+	_txtdisplay = txtdisplay;
+   if (url.length==0)
+   {
+	   
+       document.getElementById(txtdisplay).innerHTML="";
+       return;
+   }
+   xmlHttp=GetXmlHttpObject()
+   if (xmlHttp==null)
+   {
+       alert ("Browser does not support HTTP Request");
+       return;
+   }
+
+   url=url+"?"+qry;
+   xmlHttp.onreadystatechange=stateChanged;
+   xmlHttp.open("POST",encodeURI(url),true) ;
+   xmlHttp.send(null);
+}
+
+
+ var http_request = false;
+ function makePOSTRequest(url, parameters) {
+      http_request = false;
+      if (window.XMLHttpRequest) { // Mozilla, Safari,...
+         http_request = new XMLHttpRequest();
+         if (http_request.overrideMimeType) {
+         	// set type accordingly to anticipated content type
+            //http_request.overrideMimeType('text/xml');
+            http_request.overrideMimeType('text/html');
+         }
+      } else if (window.ActiveXObject) { // IE
+         try {
+            http_request = new ActiveXObject("Msxml2.XMLHTTP");
+         } catch (e) {
+            try {
+               http_request = new ActiveXObject("Microsoft.XMLHTTP");
+            } catch (e) {}
+         }
+      }
+      if (!http_request) {
+         alert('Cannot create XMLHTTP instance');
+         return false;
+      }
+      
+      http_request.onreadystatechange = alertContents();
+      http_request.open('POST', url, true);
+      http_request.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+      http_request.setRequestHeader("Content-length", parameters.length);
+      http_request.setRequestHeader("Connection", "close");
+      http_request.send(parameters);
+   }
+
+   function alertContents() {
+      if (http_request.readyState == 4) {
+         if (http_request.status == 200) {
+            //alert(http_request.responseText);
+            result = http_request.responseText;
+            document.getElementById('txtmsg').innerHTML = result;            
+         } else {
+            alert('There was a problem with the request.');
+         }
+      }
+   }
+   
+   function getPostDirector(obj) {
+      var poststr = "director_name=" + encodeURI( document.getElementById("director_name").value ) +
+                    "&citizenship=" + encodeURI( document.getElementById("citizenship").value ) +
+                    "&shareholding=" + encodeURI( document.getElementById("shareholding").value ) +
+                     "&directorship_date=" + encodeURI( document.getElementById("directorship_date").value );
+      makePOSTRequest('/system/modules/cck.go.ke.site/pages/mem_director_add.jsp', poststr);
+   }
+   
+ $(document).ready(function(){
+	
+	$(".toggle_container").hide();
+
+	$("h4.trigger").toggle(function(){
+		$(this).addClass("active"); 
+		}, function () {
+		$(this).removeClass("active");
+	});
+	
+	$("h4.trigger").click(function(){
+		$(this).next(".toggle_container").slideToggle("slow,");
+	});
+
+});
+
+
+
